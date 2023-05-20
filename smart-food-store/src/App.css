@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 .App-logo {
@@ -35,4 +36,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+.cart{
+  display: flex;
+  align-items: top;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.cart--image {
+  max-width: 350px;
+  border-radius: 9px;
+  margin-bottom: 9px;
+  
+}
+
+.cart--details{
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 9px ;
+}
+
+.cart--quantity{
+  display: flex;
+  align-items: center ;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.main--prop--div{
+  display: flex;
+}
+
+.prop--left--items{
+  width: 60%;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prop--images{
+  max-width: 150px;
+  max-height: 150px;
+  margin: 15px;
+}
+
+.button--section{
+  display: flex;
+  gap: 0.5rem;
 }
