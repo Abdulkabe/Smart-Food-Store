@@ -66,10 +66,13 @@
 
 .main--prop--div{
   display: flex;
+  justify-content: center;
+  gap: 1rem;  
 }
 
 .prop--left--items{
-  width: 60%;
+  width: 65%;
+  background-color: green;
   padding: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -84,4 +87,29 @@
 .button--section{
   display: flex;
   gap: 0.5rem;
+}
+
+.prop--right--cards{
+  width: 20%;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: lightgray;
+}
+
+.card--style{
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 5px;
+}
+
+.bb--space{
+  margin-bottom: auto;
+}
+.checkout--button{
+  background-color: pink;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
 }
