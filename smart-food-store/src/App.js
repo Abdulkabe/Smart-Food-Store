@@ -1,34 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import { Home } from './Home';
-import { Items } from './Item  galleries';
+import Home from './Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Login } from './login';
 import { Navbar } from './navbar';
 import { Kart } from './Kart';
-import { FreshFoodsList } from './FreshFoodsList';
-import { BakedList } from './BakedList';
-import { PantriesList } from './PantriesList';
-import { Admin } from './Admin';
+import FreshProduce from "./components/FreshProduce";
+import Vegetables from "./components/Vegetables";
+import Fruits from "./components/Fruits";
 
 function App() {
+
   return (
-    <>
     <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Navbar />}>
-            <Route index element={<Home />} />
-            <Route path='login' element={<Login />} />
-            <Route path='freshfoodslist' element={<FreshFoodsList />} />
-            <Route path='bakedlist' element={<BakedList />} />
-            <Route path='pantrieslist' element={<PantriesList />} />
-            <Route path='admindata' element={<Admin />} />
-            <Route path='Kart' element={<Kart />} />
-          </Route>
-        </Routes>
+      <Routes>
+        <Route path='/' element={<Navbar />}>
+          <Route index element={<Home />} />
+          <Route path='login' element={<Login />} />
+          <Route path='Kart' element={<Kart />} />
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/:categoryName" element={<FreshProduce />}></Route>
+          <Route path="/:categoryName/v/:id" element={<Vegetables />}></Route>
+          <Route path="/:categoryName/f/:id" element={<Fruits />}></Route>
+        </Route>
+      </Routes>
     </BrowserRouter>
-    
-    </>
   );
 }
 

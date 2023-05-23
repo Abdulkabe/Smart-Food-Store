@@ -36,32 +36,30 @@
     transform: rotate(360deg);
   }
 }
-*{
+/* * {
   padding: 0;
   margin: 0;
-}
+} */
 .header {
   background-color: rgb(215, 127, 142);
   padding: 18px 40px;
-
 }
 .header li {
   list-style: none;
   list-style-type: none;
-  
 }
 .leftheader {
   display: flex;
 }
 .rightheader {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: -25px;
 }
 .logo {
   color: white;
   font-size: 18px;
-  cursor:pointer;
+  cursor: pointer;
   padding-right: 5px;
 }
 .header li a {
@@ -70,8 +68,8 @@
   text-decoration: none;
   color: white;
 }
-.header li  :hover {
-  background-color:rgb(185, 101, 115) ;
+.header li :hover {
+  background-color: rgb(185, 101, 115);
 }
 .backgroundimage {
   width: 100vw;
@@ -81,12 +79,11 @@
   background-size: cover;
 }
 
-
 .categoryinput {
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-content: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   width: 100%;
   flex-direction: row;
   gap: 30px;
@@ -94,10 +91,12 @@
 .productcategory {
   width: 350px;
   margin-top: 10px;
+  object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .productcategory:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .productcategory img {
   width: 100%;
@@ -112,11 +111,12 @@
   color: black;
 }
 .adminBox {
-  margin : auto;
+  margin: auto;
   width: 45vw;
   margin-top: 150px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   padding-top: 30px;
   border-radius: 10px;
 }
@@ -153,5 +153,3 @@
 .submit:hover {
   background-color: #2020b9cc;
 }
-
-

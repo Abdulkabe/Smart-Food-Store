@@ -6,20 +6,18 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 export const Navbar = () => {
   return (
     <>
-    <nav className='header'>
+      <nav className='header'>
         <ul className='leftheader'>
-            <li className='logo' style={{color : 'white', fontSize : '18px'}}>Smart Foods</li>
-            <li><Link to="/">Home</Link></li>
+          <li className='logo' style={{ color: 'white', fontSize: '18px' }}>Smart Foods</li>
+          <li><Link to="/">Home</Link></li>
         </ul>
         <ul className='rightheader'>
-            <li><Link to="/admindata">Admin</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/Kart"><FontAwesomeIcon icon={faCartShopping} /> </Link></li>
+          <li><Link to="/admindata">Admin</Link></li>
+          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/Kart"><FontAwesomeIcon icon={faCartShopping} /> </Link></li>
         </ul>
-        
-    </nav>
-    <Outlet />
-    
+      </nav>
+      <Outlet />
     </>
   )
 }
