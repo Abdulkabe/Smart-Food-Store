@@ -15,7 +15,6 @@ export const Navbar = () => {
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/Kart"><FontAwesomeIcon icon={faCartShopping} /> </Link></li>
         </ul>
-        
     </nav>
     <Outlet />
     

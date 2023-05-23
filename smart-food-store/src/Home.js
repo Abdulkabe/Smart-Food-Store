@@ -11,7 +11,7 @@ export const Home = () => {
           image : image1,
           path : '/freshfoodslist',
           message : 'This is an image of fresh vegetables', 
-          disc : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi culpa dolorum ipsam harum consequuntur. Voluptate fugiat quisquam fuga explicabo ut?' 
+          disc : 'No more running to local shops in heat and dust as Smart Foods gives you the convenience of ordering wide range of fresh, temperature controlled vegetables from your home.' 
         },
         {
             image : image2,

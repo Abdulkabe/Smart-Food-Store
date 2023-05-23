@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import { Home } from './Home';
-import { Items } from './Item  galleries';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Login } from './login';
 import { Navbar } from './navbar';

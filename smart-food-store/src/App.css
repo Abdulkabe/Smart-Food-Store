@@ -111,4 +111,47 @@
   text-decoration: none;
   color: black;
 }
+.adminBox {
+  margin : auto;
+  width: 45vw;
+  margin-top: 150px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  padding-top: 30px;
+  border-radius: 10px;
+}
+.adminBox form {
+  margin-left: 153px;
+}
+.dataInput {
+  width: 401px;
+  padding: 10px 0px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 15px;
+  background-color: #cbcbefd1;
+  margin-top: 5px;
+  border-style: none;
+}
+.heading {
+  padding-top: 5px;
+}
+.submit {
+  background-color: #2929e6cc;
+  width: 115px;
+  padding: 7px 0px;
+  border-radius: 21px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  margin-left: 141px;
+  font-size: 17px;
+  color: white;
+  margin-bottom: 30px;
+  border-style: none;
+}
+.submit:hover {
+  background-color: #2020b9cc;
+}
+
 
