@@ -12,9 +12,11 @@ export const Navbar = () => {
             <li><Link to="/">Home</Link></li>
         </ul>
         <ul className='rightheader'>
+            <li><Link to="/admindata">Admin</Link></li>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/Kart"><FontAwesomeIcon icon={faCartShopping} /> </Link></li>
         </ul>
+        
     </nav>
     <Outlet />
     

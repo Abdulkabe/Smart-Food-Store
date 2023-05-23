@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Home } from './Home';
+import { Items } from './Item  galleries';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Login } from './login';
 import { Navbar } from './navbar';
@@ -8,6 +9,7 @@ import { Kart } from './Kart';
 import { FreshFoodsList } from './FreshFoodsList';
 import { BakedList } from './BakedList';
 import { PantriesList } from './PantriesList';
+import { Admin } from './Admin';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <Route path='freshfoodslist' element={<FreshFoodsList />} />
             <Route path='bakedlist' element={<BakedList />} />
             <Route path='pantrieslist' element={<PantriesList />} />
+            <Route path='admindata' element={<Admin />} />
             <Route path='Kart' element={<Kart />} />
           </Route>
         </Routes>
