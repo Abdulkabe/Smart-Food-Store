@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -152,4 +156,24 @@
 }
 .submit:hover {
   background-color: #2020b9cc;
+}
+
+
+.image--scaling{
+  width: 150px;
+  height: 100px ;
+  border-radius: 5px;
+}
+
+.cart--projection{
+  width: 70%;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.common{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
 }

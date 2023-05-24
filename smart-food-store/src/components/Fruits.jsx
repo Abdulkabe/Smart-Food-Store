@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react"
 import { useParams } from "react-router-dom";
 import { fruitsInfo } from './subFiles/Data';
+import { LoginContext } from '../Context.js/LoginContext';
 
 const Fruits = () => {
-
+    const {cartData, setCartData} = React.useContext(LoginContext)
     const params = useParams();
     let fruit = "";
     function findFruit() {
@@ -16,10 +17,22 @@ const Fruits = () => {
     }
     findFruit();
 
+    function check(){
+        
+        setCartData(prev => {
+            let updatedCart = [];
+            if(cartData.length === 0){updatedCart.push(fruit)}
+            updatedCart = [...prev]
+            updatedCart.push(fruit)
+            return updatedCart   
+        })
+        console.log(cartData)
+    }
+
     return (
         <div className='fpDiv'>
             <img className="fpImg" src={fruit.image} alt="Potato" />
-            <p className="fpPrice">Rs. {fruit.prices}</p>
+            <p className="fpPrice">Rs. {fruit.price}</p>
             <h3 className="fpHead">{fruit.head}</h3>
             <p className="fpDisc">{fruit.disc}</p>
             <hr className="e2" />
@@ -53,7 +66,7 @@ const Fruits = () => {
                 {fruit.quantity * 5} {fruit.priceTag}
             </label>
             <span className="fpPrice5">Rs. {fruit.price * 5}</span>
-            <button className="fpAdd">Add to Cart</button>
+            <button onClick={check} className="fpAdd">Add to Cart</button>
         </div>
     )
 }

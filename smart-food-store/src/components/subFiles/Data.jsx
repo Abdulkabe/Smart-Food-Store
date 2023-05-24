@@ -549,4 +549,3 @@ export const fruitsInfo = [
     quantity: 1,
   },
 ];
-
