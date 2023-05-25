@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import { vegetablesInfo } from './subFiles/Data';
-
+import { LoginContext } from '../Context.js/LoginContext';
 const Vegetables = () => {
-
+    const {cartData, setCartData} = React.useContext(LoginContext)
     const param = useParams();
     let vegetable = "";
     function findVegetable() {
@@ -12,11 +12,21 @@ const Vegetables = () => {
             if (itemVegetable.id == param.id) {
                 vegetable = itemVegetable;
             }
-            console.log(itemVegetable.id)
         })
     }
     findVegetable();
 
+    function check(){
+        
+        setCartData(prev => {
+            let updatedCart = [];
+            if(cartData.length === 0){updatedCart.push(vegetable)}
+            updatedCart = [...prev]
+            updatedCart.push(vegetable)
+            return updatedCart   
+        })
+        console.log(cartData)
+    }
     return (
         <div className='fpDiv'>
             <img className="fpImg" src={vegetable.image} alt="Potato" />
@@ -54,7 +64,7 @@ const Vegetables = () => {
                 {vegetable.quantity * 5} {vegetable.priceTag}
             </label>
             <span className="fpPrice5">Rs. {vegetable.price * 5}</span>
-            <button className="fpAdd">Add to Cart</button>
+            <button onClick= {check} className="fpAdd">Add to Cart</button>
         </div>
     )
 }

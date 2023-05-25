@@ -105,6 +105,7 @@ const FreshProduce = () => {
                                             <h4 className="productHead">{fruit.head}</h4>
                                             <p className="productDisc">{fruit.disc}</p>
                                             <p className="productPrice">Rs. {fruit.prices}</p>
+                                            <button>SacrA+bloom</button>
                                         </div>
                                     </>
                                 );
