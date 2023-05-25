@@ -1,8 +1,9 @@
 import './App.css';
 import Home from './Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login } from './login';
+import  Login  from './login';
 import { Navbar } from './navbar';
+import Register from './Register'
 import { Kart } from './Kart';
 import FreshProduce from "./components/FreshProduce";
 import Vegetables from "./components/Vegetables";
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Navbar />}>
           <Route index element={<Home />} />
           <Route path='login' element={<Login />} />
+          <Route path='/register' element={<Register/>} />
           <Route path='Kart' element={<Kart />} />
           <Route path="/" element={<Home />}></Route>
           <Route path="/:categoryName" element={<FreshProduce />}></Route>
