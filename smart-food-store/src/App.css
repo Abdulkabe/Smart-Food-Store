@@ -177,3 +177,13 @@
   margin-bottom: 0.5rem;
 
 }
+.checkout--card{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.checkout--card > p{
+  margin: 5px;
+}

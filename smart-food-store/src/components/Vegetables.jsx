@@ -16,17 +16,42 @@ const Vegetables = () => {
     }
     findVegetable();
 
-    function check(){
-        
-        setCartData(prev => {
-            let updatedCart = [];
-            if(cartData.length === 0){updatedCart.push(vegetable)}
-            updatedCart = [...prev]
-            updatedCart.push(vegetable)
-            return updatedCart   
-        })
-        console.log(cartData)
+    function check(veggie,head){
+        console.log(veggie,head)
+        if(cartData.length === 0){
+            setCartData(prev => {
+                let updatedCart = [...prev]
+                updatedCart.push(vegetable)
+                return updatedCart
+            })
+        } //End the first if check
+        if(cartData.length > 0){
+            let flag = false;
+            for(let i = 0; i < cartData.length; i++){
+                if(cartData[i].head === head){
+                    flag = true;
+                    setCartData(prev => {
+                        let heavyCart = [...prev]
+                        heavyCart[i] = {...heavyCart[i], quantity: heavyCart[i].quantity + 1}
+                        return heavyCart
+                    })
+                    break;
+                }
+            }
+            if(flag === true){
+                console.log("item already added")
+            }
+            else{
+                setCartData(prev => {
+                    let newCart = [...prev]
+                    newCart.push(vegetable)
+                    return newCart
+                })
+            }
+
+        }    
     }
+    console.log(cartData)
     return (
         <div className='fpDiv'>
             <img className="fpImg" src={vegetable.image} alt="Potato" />
@@ -64,7 +89,7 @@ const Vegetables = () => {
                 {vegetable.quantity * 5} {vegetable.priceTag}
             </label>
             <span className="fpPrice5">Rs. {vegetable.price * 5}</span>
-            <button onClick= {check} className="fpAdd">Add to Cart</button>
+            <button onClick= {() => check(vegetable.id,vegetable.head)} className="fpAdd">Add to Cart</button>
         </div>
     )
 }

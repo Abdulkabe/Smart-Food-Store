@@ -17,16 +17,40 @@ const Fruits = () => {
     }
     findFruit();
 
-    function check(){
-        
-        setCartData(prev => {
-            let updatedCart = [];
-            if(cartData.length === 0){updatedCart.push(fruit)}
-            updatedCart = [...prev]
-            updatedCart.push(fruit)
-            return updatedCart   
-        })
-        console.log(cartData)
+    function check(veggie,head){
+        console.log(veggie,head)
+        if(cartData.length === 0){
+            setCartData(prev => {
+                let updatedCart = [...prev]
+                updatedCart.push(fruit)
+                return updatedCart
+            })
+        } //End the first if check
+        if(cartData.length > 0){
+            let flag = false;
+            for(let i = 0; i < cartData.length; i++){
+                if(cartData[i].head === head){
+                    flag = true;
+                    setCartData(prev => {
+                        let heavyCart = [...prev]
+                        heavyCart[i] = {...heavyCart[i], quantity: heavyCart[i].quantity + 1}
+                        return heavyCart
+                    })
+                    break;
+                }
+            }
+            if(flag === true){
+                console.log("item already added")
+            }
+            else{
+                setCartData(prev => {
+                    let newCart = [...prev]
+                    newCart.push(fruit)
+                    return newCart
+                })
+            }
+
+        }    
     }
 
     return (
@@ -66,7 +90,7 @@ const Fruits = () => {
                 {fruit.quantity * 5} {fruit.priceTag}
             </label>
             <span className="fpPrice5">Rs. {fruit.price * 5}</span>
-            <button onClick={check} className="fpAdd">Add to Cart</button>
+            <button onClick={() => check(fruit.id,fruit.head)} className="fpAdd">Add to Cart</button>
         </div>
     )
 }

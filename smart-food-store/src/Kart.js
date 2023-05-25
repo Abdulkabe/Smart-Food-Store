@@ -1,6 +1,7 @@
 import React from 'react'
 import { LoginContext } from './Context.js/LoginContext'
 import { Card, CardBody,CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import Checkout from './components/Checkout';
 
 export default function Kart() {
   const { cartData, setCartData } = React.useContext(LoginContext)
@@ -9,11 +10,9 @@ export default function Kart() {
   }
   ,[cartData]) */
   function addition(item,head){
-    console.log(item ,head)
     for(let i = 0; i < cartData.length; i++){
        if(item === cartData[i].id && head === cartData[i].head){
         const index = cartData.indexOf(cartData[i])
-        console.log(index)
         setCartData(prev => {
           let updatedArray = [...prev]
           updatedArray[index] = {...updatedArray[i], quantity: updatedArray[index].quantity + 1}
@@ -82,6 +81,7 @@ export default function Kart() {
   return (
     <div className='cart--projection'>
       {projection}
+      <Checkout />
     </div>
   )
 }
