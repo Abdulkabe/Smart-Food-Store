@@ -15,7 +15,7 @@ export const pagesInfo = [
     categoryNamed: "Breads . Deserts",
     type1: "Breads",
     type2: "Deserts",
-    disc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi culpa dolorum ipsam harum consequuntur. Voluptate fugiat quisquam fuga explicabo ut?'
+    disc: 'We provide you with soft and fresh baked breads, cakes, biscuits and many more. We believe in customer preference and their needs.'
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const pagesInfo = [
     categoryNamed: "Essentials . Lentils",
     type1: "Essentials",
     type2: "Lentils",
-    disc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi culpa dolorum ipsam harum consequuntur. Voluptate fugiat quisquam fuga explicabo ut?'
+    disc: 'Tired of running to superstores for flour, rice, oil, jam etc? We provide you these items with the best deals you can afford and deliver to your homes in no time.'
 
   },
 ]
