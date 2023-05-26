@@ -1,12 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './LoginStyles.css'
 import React, { useState } from 'react'
-
  const Login = () => {
+const history = useNavigate();
   const gotoSignup = () => {
     history('/register')
   }
-  const history = useNavigate();
   const [inputVal, setInputVal] = useState({
     email: '',
     password: '',
@@ -22,32 +21,36 @@ import React, { useState } from 'react'
       }
     })
   };
-  const validateUser = (e) =>{
-    const {email, password} = inputVal;
-    const userRecord = localStorage.getItem('userInfo');
+  const validateUser = async (e) =>{
+    
     e.preventDefault();
-    if(email === ""){
-      alert('Email is required.')
-    }
-    else if(password === ''){
-      alert('Password is required.')
-    }
-    else{
-          if(userRecord && userRecord.length){
-            const userData1 = JSON.parse(userRecord);
-            const userLogin = userData1.filter((el, k) =>{
-              return el.email === email && el.password === password
-            })
-            if(userLogin.length === 0){
-              alert("User doest not exist.")
-            }
-            else{
-              localStorage.setItem('userLogin', JSON.stringify(userLogin));
-              history('/home');
-            }
-          }
-    }
-  }
+      const response = await fetch("http://localhost:8080/api/login", {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: inputVal.email, password: inputVal.password })
+  
+      });
+      const json = await response.json()
+      console.log(json);
+      if (json.success) {
+        alert("Login successful.")
+        //save the auth toke to local storage and redirect
+        localStorage.setItem('userEmail', inputVal.email)
+         localStorage.setItem('token', json.authToken)
+        history("/");
+  
+      }
+      else {
+        alert("Enter Valid Credentials")
+      }
+      }
+    
+    
+  
   return (
     <div className='login-container'>
         <form>
